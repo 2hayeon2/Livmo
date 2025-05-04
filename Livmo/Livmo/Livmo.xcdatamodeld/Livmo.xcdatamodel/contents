@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23788" systemVersion="24D81" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DBBlock" representedClassName="DBBlock" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="uid" optional="YES" attributeType="String"/>
+        <relationship name="tagList" optional="YES" toMany="YES" maxCount="2" deletionRule="Nullify" ordered="YES" destinationEntity="DBTag"/>
+    </entity>
+    <entity name="DBDay" representedClassName="DBDay" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="uid" optional="YES" attributeType="String"/>
+        <relationship name="streetList" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DBStreet"/>
+    </entity>
+    <entity name="DBStreet" representedClassName="DBStreet" syncable="YES">
+        <attribute name="partType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String"/>
+        <relationship name="blockList" optional="YES" toMany="YES" maxCount="3" deletionRule="Nullify" ordered="YES" destinationEntity="DBBlock"/>
+    </entity>
+    <entity name="DBTag" representedClassName="DBTag" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+</model>
